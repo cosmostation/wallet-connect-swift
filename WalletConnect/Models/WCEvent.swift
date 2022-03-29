@@ -21,6 +21,10 @@ public enum WCEvent: String {
     case bnbTransactionConfirm = "bnb_tx_confirmation"
     case trustSignTransacation = "trust_signTransaction"
     case getAccounts = "get_accounts"
+    
+    case keplrEnableWallet = "keplr_enable_wallet_connect_v1"
+    case keplrGetWallet = "keplr_get_key_wallet_connect_v1"
+    case keplrSignAmino = "keplr_sign_amino_wallet_connect_v1"
 }
 
 extension WCEvent {
@@ -28,6 +32,7 @@ extension WCEvent {
     static let eth = Set<WCEvent>([.ethSign, .ethPersonalSign, .ethSignTypeData, .ethSignTransaction, .ethSendTransaction])
     static let bnb = Set<WCEvent>([.bnbSign, .bnbTransactionConfirm])
     static let trust = Set<WCEvent>([.trustSignTransacation, .getAccounts])
+    static let keplr = Set<WCEvent>([.keplrEnableWallet, .keplrGetWallet, .keplrSignAmino])
 
     func decode<T: Codable>(_ data: Data) throws -> JSONRPCRequest<T> {
         return try JSONDecoder().decode(JSONRPCRequest<T>.self, from: data)
