@@ -8,6 +8,10 @@
 
 import Foundation
 
+public typealias EnableKeplrWalletClosure = (_ id: Int64, _ param: [String]) -> Void
+public typealias GetKeplrWalletClosure = (_ id: Int64, _ param: [String]) -> Void
+public typealias SignKeplrAminoClosure = (_ params: NSDictionary) -> Void
+
 public struct WCKeplrInteractor {
     public var onEnableKeplrWallet: EnableKeplrWalletClosure?
     public var onGetKeplrWallet: GetKeplrWalletClosure?
