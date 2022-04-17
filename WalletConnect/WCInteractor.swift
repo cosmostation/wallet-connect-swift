@@ -32,6 +32,7 @@ open class WCInteractor {
     public var bnb: WCBinanceInteractor
     public var trust: WCTrustInteractor
     public var keplr: WCKeplrInteractor
+    public var cosmostation: WCCosmostationInteractor
 
     // incoming event handlers
     public var onSessionRequest: SessionRequestClosure?
@@ -66,6 +67,7 @@ open class WCInteractor {
         self.bnb = WCBinanceInteractor()
         self.trust = WCTrustInteractor()
         self.keplr = WCKeplrInteractor()
+        self.cosmostation = WCCosmostationInteractor()
 
         socket.onConnect = { [weak self] in self?.onConnect() }
         socket.onDisconnect = { [weak self] error in self?.onDisconnect(error: error) }
@@ -215,6 +217,8 @@ extension WCInteractor {
                 try trust.handleEvent(event, topic: topic, decrypted: decrypted)
             } else if WCEvent.keplr.contains(event) {
                 try keplr.handleEvent(event, topic: topic, decrypted: decrypted)
+            } else if WCEvent.cosmostation.contains(event) {
+                try cosmostation.handleEvent(event, topic: topic, decrypted: decrypted)
             }
         }
     }

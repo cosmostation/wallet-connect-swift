@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		04D3392927F3317600E82AA7 /* WCKeplrWallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D3392827F3317600E82AA7 /* WCKeplrWallet.swift */; };
 		04D3392B27F3319400E82AA7 /* WCKeplrInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D3392A27F3319400E82AA7 /* WCKeplrInteractor.swift */; };
+		1853C413280C32E900370170 /* WCCosmostationInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1853C412280C32E900370170 /* WCCosmostationInteractor.swift */; };
+		1853C416280C336300370170 /* WCCosmostationAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1853C415280C336300370170 /* WCCosmostationAccount.swift */; };
 		BB47674F236BB93600A9A9AF /* WalletConnect.h in Headers */ = {isa = PBXBuildFile; fileRef = BB47674D236BB93600A9A9AF /* WalletConnect.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BB476775236BB98400A9A9AF /* WCInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB476755236BB98300A9A9AF /* WCInteractor.swift */; };
 		BB476776236BB98400A9A9AF /* JSONRPC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB476757236BB98300A9A9AF /* JSONRPC.swift */; };
@@ -43,6 +45,8 @@
 /* Begin PBXFileReference section */
 		04D3392827F3317600E82AA7 /* WCKeplrWallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WCKeplrWallet.swift; sourceTree = "<group>"; };
 		04D3392A27F3319400E82AA7 /* WCKeplrInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WCKeplrInteractor.swift; sourceTree = "<group>"; };
+		1853C412280C32E900370170 /* WCCosmostationInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WCCosmostationInteractor.swift; sourceTree = "<group>"; };
+		1853C415280C336300370170 /* WCCosmostationAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WCCosmostationAccount.swift; sourceTree = "<group>"; };
 		BB47674A236BB93600A9A9AF /* WalletConnect.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WalletConnect.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB47674D236BB93600A9A9AF /* WalletConnect.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WalletConnect.h; sourceTree = "<group>"; };
 		BB47674E236BB93600A9A9AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -100,6 +104,14 @@
 			path = Keplr;
 			sourceTree = "<group>";
 		};
+		1853C414280C334A00370170 /* Cosmostation */ = {
+			isa = PBXGroup;
+			children = (
+				1853C415280C336300370170 /* WCCosmostationAccount.swift */,
+			);
+			path = Cosmostation;
+			sourceTree = "<group>";
+		};
 		BB476740236BB93600A9A9AF = {
 			isa = PBXGroup;
 			children = (
@@ -152,6 +164,7 @@
 				BB47675A236BB98300A9A9AF /* WCBinanceInteractor.swift */,
 				BB47675B236BB98300A9A9AF /* WCTrustInteractor.swift */,
 				BB47675C236BB98300A9A9AF /* WCEthereumInteractor.swift */,
+				1853C412280C32E900370170 /* WCCosmostationInteractor.swift */,
 				04D3392A27F3319400E82AA7 /* WCKeplrInteractor.swift */,
 			);
 			path = SubInteractor;
@@ -160,6 +173,7 @@
 		BB47675D236BB98300A9A9AF /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				1853C414280C334A00370170 /* Cosmostation */,
 				04D3392727F3316500E82AA7 /* Keplr */,
 				BB47675E236BB98300A9A9AF /* WCEvent.swift */,
 				BB47675F236BB98300A9A9AF /* WCSessionModels.swift */,
@@ -306,6 +320,7 @@
 				BB476784236BB98400A9A9AF /* WCBinanceCancelOrder.swift in Sources */,
 				BB476780236BB98400A9A9AF /* WCTrustTransaction.swift in Sources */,
 				BB47677D236BB98400A9A9AF /* WCPeerMeta.swift in Sources */,
+				1853C413280C32E900370170 /* WCCosmostationInteractor.swift in Sources */,
 				BB47678C236BB98400A9A9AF /* WCEncryptor.swift in Sources */,
 				BB476787236BB98400A9A9AF /* WCBinanceTransferOrder.swift in Sources */,
 				BB476786236BB98400A9A9AF /* WCBinanceTradeOrder.swift in Sources */,
@@ -317,6 +332,7 @@
 				BB47677B236BB98400A9A9AF /* WCEvent.swift in Sources */,
 				BB476788236BB98400A9A9AF /* Data+Hex.swift in Sources */,
 				BB47677C236BB98400A9A9AF /* WCSessionModels.swift in Sources */,
+				1853C416280C336300370170 /* WCCosmostationAccount.swift in Sources */,
 				BB476782236BB98400A9A9AF /* WCEthereumTransaction.swift in Sources */,
 				BB47677F236BB98400A9A9AF /* WCTrustAccount.swift in Sources */,
 				BB47677A236BB98400A9A9AF /* WCEthereumInteractor.swift in Sources */,
