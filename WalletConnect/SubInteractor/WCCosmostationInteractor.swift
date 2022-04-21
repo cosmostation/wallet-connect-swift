@@ -8,21 +8,21 @@
 
 import Foundation
 
-public typealias CosmostationGetKeysClosure = (_ id: Int64, _ param: [String]) -> Void
-public typealias CosmostationSignAminoClosure = (_ params: NSDictionary) -> Void
+public typealias CosmostationAccountsClosure = (_ id: Int64, _ param: [String]) -> Void
+public typealias CosmostationSignTxClosure = (_ params: NSDictionary) -> Void
 
 public struct WCCosmostationInteractor {
-    public var onCosmostationGetKeys: CosmostationGetKeysClosure?
-    public var onCosmosatationSignAmino: CosmostationSignAminoClosure?
+    public var onCosmostationAccounts: CosmostationAccountsClosure?
+    public var onCosmosatationSignTx: CosmostationSignTxClosure?
     
     func handleEvent(_ event: WCEvent, topic: String, decrypted: Data) throws {
         switch event {
-        case .cosmostationGetKeys:
+        case .cosmostationAccounts:
             let request: JSONRPCRequest<[String]> = try event.decode(decrypted)
-            onCosmostationGetKeys?(request.id, request.params)
-        case .cosmostationSignAmino:
+            onCosmostationAccounts?(request.id, request.params)
+        case .cosmostationSignTx:
             if let dicDecrypted = try? JSONSerialization.jsonObject(with: decrypted, options: .mutableLeaves) as? NSDictionary {
-                onCosmosatationSignAmino?(dicDecrypted)
+                onCosmosatationSignTx?(dicDecrypted)
             }
             
         default:

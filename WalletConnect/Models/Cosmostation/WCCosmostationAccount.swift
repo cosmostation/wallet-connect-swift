@@ -14,14 +14,12 @@ public struct WCCosmostationAccount: Codable {
     public let pubKey: String
     public let address: String
     public let bech32Address: String
-    public let isNanoLedger: Bool
 
-    public init(name: String, algo: String, pubKey: String, address: String, bech32Address: String, isNanoLedger: Bool) {
+    public init(name: String, algo: String, pubKey: String, address: String, bech32Address: String) {
         self.name = name
         self.algo = algo
         self.pubKey = pubKey
         self.address = address
         self.bech32Address = bech32Address
-        self.isNanoLedger = isNanoLedger
     }
 }
