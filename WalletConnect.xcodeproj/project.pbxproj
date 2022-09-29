@@ -11,6 +11,7 @@
 		04D3392B27F3319400E82AA7 /* WCKeplrInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D3392A27F3319400E82AA7 /* WCKeplrInteractor.swift */; };
 		1853C413280C32E900370170 /* WCCosmostationInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1853C412280C32E900370170 /* WCCosmostationInteractor.swift */; };
 		1853C416280C336300370170 /* WCCosmostationAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1853C415280C336300370170 /* WCCosmostationAccount.swift */; };
+		18ABCF6A28E5DA5200E022C5 /* WCCosmosInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18ABCF6928E5DA5200E022C5 /* WCCosmosInteractor.swift */; };
 		BB47674F236BB93600A9A9AF /* WalletConnect.h in Headers */ = {isa = PBXBuildFile; fileRef = BB47674D236BB93600A9A9AF /* WalletConnect.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BB476775236BB98400A9A9AF /* WCInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB476755236BB98300A9A9AF /* WCInteractor.swift */; };
 		BB476776236BB98400A9A9AF /* JSONRPC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB476757236BB98300A9A9AF /* JSONRPC.swift */; };
@@ -47,6 +48,7 @@
 		04D3392A27F3319400E82AA7 /* WCKeplrInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WCKeplrInteractor.swift; sourceTree = "<group>"; };
 		1853C412280C32E900370170 /* WCCosmostationInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WCCosmostationInteractor.swift; sourceTree = "<group>"; };
 		1853C415280C336300370170 /* WCCosmostationAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WCCosmostationAccount.swift; sourceTree = "<group>"; };
+		18ABCF6928E5DA5200E022C5 /* WCCosmosInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WCCosmosInteractor.swift; sourceTree = "<group>"; };
 		BB47674A236BB93600A9A9AF /* WalletConnect.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WalletConnect.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB47674D236BB93600A9A9AF /* WalletConnect.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WalletConnect.h; sourceTree = "<group>"; };
 		BB47674E236BB93600A9A9AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 				BB47675C236BB98300A9A9AF /* WCEthereumInteractor.swift */,
 				1853C412280C32E900370170 /* WCCosmostationInteractor.swift */,
 				04D3392A27F3319400E82AA7 /* WCKeplrInteractor.swift */,
+				18ABCF6928E5DA5200E022C5 /* WCCosmosInteractor.swift */,
 			);
 			path = SubInteractor;
 			sourceTree = "<group>";
@@ -337,6 +340,7 @@
 				BB47677F236BB98400A9A9AF /* WCTrustAccount.swift in Sources */,
 				BB47677A236BB98400A9A9AF /* WCEthereumInteractor.swift in Sources */,
 				BB476779236BB98400A9A9AF /* WCTrustInteractor.swift in Sources */,
+				18ABCF6A28E5DA5200E022C5 /* WCCosmosInteractor.swift in Sources */,
 				BB476789236BB98400A9A9AF /* Encodable+Extension.swift in Sources */,
 				BB476778236BB98400A9A9AF /* WCBinanceInteractor.swift in Sources */,
 				BB476777236BB98400A9A9AF /* WCSessionStore.swift in Sources */,

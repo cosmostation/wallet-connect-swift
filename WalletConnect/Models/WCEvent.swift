@@ -40,7 +40,8 @@ extension WCEvent {
     static let bnb = Set<WCEvent>([.bnbSign, .bnbTransactionConfirm])
     static let trust = Set<WCEvent>([.trustSignTransacation, .getAccounts])
     static let keplr = Set<WCEvent>([.keplrEnableWallet, .keplrGetWallet, .keplrSignAmino])
-    static let cosmostation = Set<WCEvent>([.cosmostationAccounts, .cosmostationSignTx, .cosmosGetAccounts, .cosmosSignAmino, .cosmosSignDirect])
+    static let cosmostation = Set<WCEvent>([.cosmostationAccounts, .cosmostationSignTx])
+    static let cosmos = Set<WCEvent>([.cosmosGetAccounts, .cosmosSignAmino, .cosmosSignDirect])
 
     func decode<T: Codable>(_ data: Data) throws -> JSONRPCRequest<T> {
         return try JSONDecoder().decode(JSONRPCRequest<T>.self, from: data)

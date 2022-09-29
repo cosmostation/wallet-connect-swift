@@ -34,6 +34,7 @@ open class WCInteractor {
     public var trust: WCTrustInteractor
     public var keplr: WCKeplrInteractor
     public var cosmostation: WCCosmostationInteractor
+    public var cosmos: WCCosmosInteractor
 
     // incoming event handlers
     public var onSessionRequest: SessionRequestClosure?
@@ -67,6 +68,7 @@ open class WCInteractor {
         self.trust = WCTrustInteractor()
         self.keplr = WCKeplrInteractor()
         self.cosmostation = WCCosmostationInteractor()
+        self.cosmos = WCCosmosInteractor()
         
         self.socket = WebSocket(request: request)
         self.socket.onEvent = { [weak self] (event) in
@@ -231,6 +233,8 @@ extension WCInteractor {
                 try keplr.handleEvent(event, topic: topic, decrypted: decrypted)
             } else if WCEvent.cosmostation.contains(event) {
                 try cosmostation.handleEvent(event, topic: topic, decrypted: decrypted)
+            } else if WCEvent.cosmos.contains(event) {
+                try cosmos.handleEvent(event, topic: topic, decrypted: decrypted)
             }
         }
     }
