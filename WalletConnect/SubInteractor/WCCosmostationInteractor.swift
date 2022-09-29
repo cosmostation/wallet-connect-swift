@@ -17,10 +17,10 @@ public struct WCCosmostationInteractor {
     
     func handleEvent(_ event: WCEvent, topic: String, decrypted: Data) throws {
         switch event {
-        case .cosmostationAccounts:
+        case .cosmostationAccounts, .cosmosGetAccounts:
             let request: JSONRPCRequest<[String]> = try event.decode(decrypted)
             onCosmostationAccounts?(request.id, request.params)
-        case .cosmostationSignTx:
+        case .cosmostationSignTx, .cosmosSignAmino, .cosmosSignDirect:
             if let dicDecrypted = try? JSONSerialization.jsonObject(with: decrypted, options: .mutableLeaves) as? NSDictionary {
                 onCosmosatationSignTx?(dicDecrypted)
             }
