@@ -10,10 +10,12 @@ import Foundation
 
 public typealias CosmostationAccountsClosure = (_ id: Int64, _ param: [String]) -> Void
 public typealias CosmostationSignTxClosure = (_ params: NSDictionary) -> Void
+public typealias CosmostationSignDirectTxClosure = (_ params: NSDictionary) -> Void
 
 public struct WCCosmostationInteractor {
     public var onCosmostationAccounts: CosmostationAccountsClosure?
     public var onCosmosatationSignTx: CosmostationSignTxClosure?
+    public var onCosmosatationSignDirectTx: CosmostationSignDirectTxClosure?
     
     func handleEvent(_ event: WCEvent, topic: String, decrypted: Data) throws {
         switch event {
@@ -24,7 +26,10 @@ public struct WCCosmostationInteractor {
             if let dicDecrypted = try? JSONSerialization.jsonObject(with: decrypted, options: .mutableLeaves) as? NSDictionary {
                 onCosmosatationSignTx?(dicDecrypted)
             }
-            
+        case .cosmostationSignDirectTx:
+            if let dicDecrypted = try? JSONSerialization.jsonObject(with: decrypted, options: .mutableLeaves) as? NSDictionary {
+                onCosmosatationSignDirectTx?(dicDecrypted)
+            }
         default:
             break
         }
