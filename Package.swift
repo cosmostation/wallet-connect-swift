@@ -13,7 +13,7 @@ let package = Package(
     dependencies: [
         .package(url: "https://github.com/krzyzanowskim/CryptoSwift", from: "1.1.0"),
         .package(url: "https://github.com/mxcl/PromiseKit", from: "6.8.0"),
-        .package(url: "https://github.com/daltoniam/Starscream", from: "3.1.1"),
+        .package(url: "https://github.com/daltoniam/Starscream", from: "3.0.3"),
     ],
     targets: [
         .target(
