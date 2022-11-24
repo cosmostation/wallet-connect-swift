@@ -63,31 +63,19 @@ open class WCInteractor {
 
         var request = URLRequest(url: session.bridge)
         request.timeoutInterval = sessionRequestTimeout
+        self.socket = WebSocket(request: request)
         self.eth = WCEthereumInteractor()
         self.bnb = WCBinanceInteractor()
         self.trust = WCTrustInteractor()
         self.keplr = WCKeplrInteractor()
         self.cosmostation = WCCosmostationInteractor()
         self.cosmos = WCCosmosInteractor()
-        
-        self.socket = WebSocket(request: request)
-        self.socket.onEvent = { [weak self] (event) in
-            guard let self = self else { return }
-            switch event {
-            case .connected(let dictionary):
-                self.onConnect()
-            case .disconnected(let message, let id):
-                self.onDisconnect(error: WCError.unknown)
-            case .text(let text):
-                self.onReceiveMessage(text: text)
-            case .binary(let data) :
-                WCLog(event, "\(data.toHexString())")
-            case .error(let error):
-                WCLog(error)
-            default:
-                WCLog(event)
-            }
-        }
+        socket.onConnect = { [weak self] in self?.onConnect() }
+        socket.onDisconnect = { [weak self] error in self?.onDisconnect(error: error) }
+        socket.onText = { [weak self] text in self?.onReceiveMessage(text: text) }
+        socket.onPong = { _ in WCLog("<== pong") }
+        socket.onData = { data in WCLog("<== websocketDidReceiveData: \(data.toHexString())") }
+
     }
 
     deinit {
@@ -95,7 +83,7 @@ open class WCInteractor {
     }
 
     open func connect() -> Promise<Bool> {
-        if state == .connected || state == .connecting {
+        if socket.isConnected {
             return Promise.value(true)
         }
         socket.connect()
@@ -107,7 +95,7 @@ open class WCInteractor {
 
     open func pause() {
         state = .paused
-        socket.disconnect(closeCode: CloseCode.goingAway.rawValue)
+        socket.disconnect(forceTimeout: nil, closeCode: CloseCode.goingAway.rawValue)
     }
 
     open func resume() {
