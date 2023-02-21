@@ -11,11 +11,11 @@ import Foundation
 public struct WCCosmostationAccount: Codable {
     public let name: String
     public let algo: String
-    public let pubKey: [UInt8]
+    public let pubKey: String
     public let address: [UInt8]
     public let bech32Address: String
 
-    public init(name: String, algo: String, pubKey: [UInt8], address: [UInt8], bech32Address: String) {
+    public init(name: String, algo: String, pubKey: String, address: [UInt8], bech32Address: String) {
         self.name = name
         self.algo = algo
         self.pubKey = pubKey
